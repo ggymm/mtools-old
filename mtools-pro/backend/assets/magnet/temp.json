@@ -1,0 +1,31 @@
+{
+  "id": "",
+  "name": "",
+  "desc": "",
+  "proxy": true,
+  "index": "",
+  "referer": "",
+  "publish": "",
+  "path": {
+    "params": [
+      {
+        "func": "",
+        "origin": "",
+        "replace": ""
+      }
+    ],
+    "default": ""
+  },
+  "parse": {
+    "items": {
+      "xpath": "",
+      "startIndex": 0
+    },
+    "count": [],
+    "name": [],
+    "size": [],
+    "magnet": [],
+    "downloadHot": [],
+    "downloadTime": []
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "mtools.v2.0.6",
+  "debounceMS": 86400000,
+  "outputfilename": "mtools.v2.0.5",
+  "frontend:install": "pnpm install",
+  "frontend:build": "pnpm run build",
+  "frontend:dev:watcher": "pnpm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "gongym",
+    "email": "1967988842@qq.com"
+  }
+}

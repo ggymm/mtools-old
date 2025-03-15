@@ -1,0 +1,55 @@
+{
+  "id": "yhg007",
+  "name": "移花宫",
+  "desc": "移花宫 -武林禁地，闲人禁止入内-磁力链接搜索,BT种子搜索,磁力搜索引擎",
+  "proxy": true,
+  "index": "https://yhg007.com",
+  "referer": "",
+  "publish": "https://xn--7ovz63g.com",
+  "path": {
+    "params": [],
+    "default": "/search-${search}-0-0-${page}.html"
+  },
+  "parse": {
+    "items": {
+      "xpath": "//div[@class='tbox']/div[@class='ssbox']",
+      "startIndex": 0
+    },
+    "count": [
+      {
+        "type": "xpath",
+        "xpath": "//div[contains(@class,'pager')]/a[last()-1]/text()"
+      }
+    ],
+    "name": [
+      {
+        "type": "xpathList",
+        "xpath": "//div[@class='title']/h3/a//text()"
+      }
+    ],
+    "size": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='sbar']/span[3]/b/text()"
+      }
+    ],
+    "magnet": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='sbar']/span[1]/a/@href"
+      }
+    ],
+    "downloadHot": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='sbar']/span[5]/b/text()"
+      }
+    ],
+    "downloadTime": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='sbar']/span[4]/b/text()"
+      }
+    ]
+  }
+}

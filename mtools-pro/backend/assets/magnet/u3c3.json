@@ -1,0 +1,66 @@
+{
+  "id": "u3c3",
+  "name": "U3C3",
+  "desc": "U3C3",
+  "proxy": true,
+  "index": "https://u3c3.com",
+  "referer": "",
+  "publish": "https://github.com/u3c3/BT-btt",
+  "path": {
+    "params": [
+      {
+        "func": "u3c3Search2",
+        "param": "search2",
+        "default": "eelja3lfea"
+      }
+    ],
+    "default": "/?p=${page}&search2=${search2}&search=${search}"
+  },
+  "parse": {
+    "items": {
+      "xpath": "//tr[@class='default']",
+      "startIndex": 0
+    },
+    "count": [
+      {
+        "type": "regex",
+        "regex": "totalPages:\\s*(\\d+)"
+      }
+    ],
+    "name": [
+      {
+        "type": "xpath",
+        "xpath": "/td[2]/a/@title"
+      }
+    ],
+    "size": [
+      {
+        "type": "xpath",
+        "xpath": "/td[4]/text()"
+      }
+    ],
+    "magnet": [
+      {
+        "type": "xpath",
+        "xpath": "/td[3]/a[2]/@href"
+      },
+      {
+        "type": "subIndex",
+        "start": 0,
+        "finish": 60
+      }
+    ],
+    "downloadHot": [
+      {
+        "type": "",
+        "default": "99"
+      }
+    ],
+    "downloadTime": [
+      {
+        "type": "xpath",
+        "xpath": "/td[5]/text()"
+      }
+    ]
+  }
+}

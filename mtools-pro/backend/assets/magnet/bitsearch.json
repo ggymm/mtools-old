@@ -1,0 +1,60 @@
+{
+  "id": "bitsearch",
+  "name": "Bitsearch",
+  "desc": "New Generation Torrent Search Engine | Bitsearch",
+  "proxy": true,
+  "index": "https://bitsearch.to",
+  "referer": "https://bitsearch.to",
+  "publish": "https://bitsearch.to",
+  "path": {
+    "params": [],
+    "default": "/search?q=${search}&page=${page}"
+  },
+  "parse": {
+    "items": {
+      "xpath": "//li[contains(@class,'search-result')]",
+      "startIndex": 0
+    },
+    "count": [
+      {
+        "type": "xpath",
+        "xpath": "//div[contains(@class,'pagination')]/a[last()-1]/text()"
+      }
+    ],
+    "name": [
+      {
+        "type": "xpath",
+        "xpath": "//h5[contains(@class,'title')]/a/text()"
+      }
+    ],
+    "size": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='stats']/div[2]/text()"
+      }
+    ],
+    "magnet": [
+      {
+        "type": "xpath",
+        "xpath": "//div[contains(@class,'links')]/a[2]/@href"
+      },
+      {
+        "type": "subIndex",
+        "start": 0,
+        "finish": 60
+      }
+    ],
+    "downloadHot": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='stats']/div[3]/font/text()"
+      }
+    ],
+    "downloadTime": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='stats']/div[last()]/text()"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "btsow",
+  "name": "BTSOW",
+  "desc": "BTSOW",
+  "proxy": true,
+  "index": "https://btsow.motorcycles",
+  "referer": "",
+  "publish": "https://btsow.com",
+  "path": {
+    "params": [],
+    "default": "/search/${search}/page/${page}"
+  },
+  "parse": {
+    "items": {
+      "xpath": "//div[@class='data-list']/div[@class='row']",
+      "startIndex": 0
+    },
+    "count": [
+      {
+        "type": "xpath",
+        "xpath": "//ul[contains(@class,'pagination')]/li[last()-1]/a/text()"
+      }
+    ],
+    "name": [
+      {
+        "type": "xpath",
+        "xpath": "//a/@title"
+      }
+    ],
+    "size": [
+      {
+        "type": "xpath",
+        "xpath": "//div[contains(@class,'text-right size')]/text()"
+      }
+    ],
+    "magnet": [
+      {
+        "type": "xpath",
+        "xpath": "//a/@href"
+      },
+      {
+        "type": "subIndex",
+        "start": -40,
+        "finish": 0
+      }
+    ],
+    "downloadHot": [
+      {
+        "type": "",
+        "default": "99"
+      }
+    ],
+    "downloadTime": [
+      {
+        "type": "xpath",
+        "xpath": "//div[contains(@class,'text-right date')]/text()"
+      }
+    ]
+  }
+}

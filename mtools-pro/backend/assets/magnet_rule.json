@@ -1,0 +1,303 @@
+[
+  {
+    "id": "bitsearch",
+    "name": "Bitsearch",
+    "desc": "New Generation Torrent Search Engine | Bitsearch",
+    "proxy": true,
+    "index": "https://bitsearch.to",
+    "referer": "https://bitsearch.to",
+    "publish": "https://bitsearch.to",
+    "path": {
+      "params": [],
+      "default": "/search?q=${search}&page=${page}"
+    },
+    "parse": {
+      "items": {
+        "xpath": "//li[contains(@class,'search-result')]",
+        "startIndex": 0
+      },
+      "count": [
+        {
+          "type": "xpath",
+          "xpath": "//div[contains(@class,'pagination')]/a[last()-1]/text()"
+        }
+      ],
+      "name": [
+        {
+          "type": "xpath",
+          "xpath": "//h5[contains(@class,'title')]/a/text()"
+        }
+      ],
+      "size": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='stats']/div[2]/text()"
+        }
+      ],
+      "magnet": [
+        {
+          "type": "xpath",
+          "xpath": "//div[contains(@class,'links')]/a[2]/@href"
+        },
+        {
+          "type": "subIndex",
+          "start": 0,
+          "finish": 60
+        }
+      ],
+      "downloadHot": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='stats']/div[3]/font/text()"
+        }
+      ],
+      "downloadTime": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='stats']/div[last()]/text()"
+        }
+      ]
+    }
+  },
+  {
+    "id": "btsow",
+    "name": "BTSOW",
+    "desc": "BTSOW",
+    "proxy": true,
+    "index": "https://btsow.motorcycles",
+    "referer": "",
+    "publish": "https://btsow.com",
+    "path": {
+      "params": [],
+      "default": "/search/${search}/page/${page}"
+    },
+    "parse": {
+      "items": {
+        "xpath": "//div[@class='data-list']/div[@class='row']",
+        "startIndex": 0
+      },
+      "count": [
+        {
+          "type": "xpath",
+          "xpath": "//ul[contains(@class,'pagination')]/li[last()-1]/a/text()"
+        }
+      ],
+      "name": [
+        {
+          "type": "xpath",
+          "xpath": "//a/@title"
+        }
+      ],
+      "size": [
+        {
+          "type": "xpath",
+          "xpath": "//div[contains(@class,'text-right size')]/text()"
+        }
+      ],
+      "magnet": [
+        {
+          "type": "xpath",
+          "xpath": "//a/@href"
+        },
+        {
+          "type": "subIndex",
+          "start": -40,
+          "finish": 0
+        }
+      ],
+      "downloadHot": [
+        {
+          "type": "",
+          "default": "99"
+        }
+      ],
+      "downloadTime": [
+        {
+          "type": "xpath",
+          "xpath": "//div[contains(@class,'text-right date')]/text()"
+        }
+      ]
+    }
+  },
+  {
+    "id": "u3c3",
+    "name": "U3C3",
+    "desc": "U3C3",
+    "proxy": true,
+    "index": "https://u3c3.com",
+    "referer": "",
+    "publish": "https://github.com/u3c3/BT-btt",
+    "path": {
+      "params": [
+        {
+          "func": "u3c3Search2",
+          "param": "search2",
+          "default": "eelja3lfea"
+        }
+      ],
+      "default": "/?p=${page}&search2=${search2}&search=${search}"
+    },
+    "parse": {
+      "items": {
+        "xpath": "//tr[@class='default']",
+        "startIndex": 0
+      },
+      "count": [
+        {
+          "type": "regex",
+          "regex": "totalPages:\\s*(\\d+)"
+        }
+      ],
+      "name": [
+        {
+          "type": "xpath",
+          "xpath": "/td[2]/a/@title"
+        }
+      ],
+      "size": [
+        {
+          "type": "xpath",
+          "xpath": "/td[4]/text()"
+        }
+      ],
+      "magnet": [
+        {
+          "type": "xpath",
+          "xpath": "/td[3]/a[2]/@href"
+        },
+        {
+          "type": "subIndex",
+          "start": 0,
+          "finish": 60
+        }
+      ],
+      "downloadHot": [
+        {
+          "type": "",
+          "default": "99"
+        }
+      ],
+      "downloadTime": [
+        {
+          "type": "xpath",
+          "xpath": "/td[5]/text()"
+        }
+      ]
+    }
+  },
+  {
+    "id": "yhg007",
+    "name": "移花宫",
+    "desc": "移花宫 -武林禁地，闲人禁止入内-磁力链接搜索,BT种子搜索,磁力搜索引擎",
+    "proxy": true,
+    "index": "https://yhg007.com",
+    "referer": "",
+    "publish": "https://xn--7ovz63g.com",
+    "path": {
+      "params": [],
+      "default": "/search-${search}-0-0-${page}.html"
+    },
+    "parse": {
+      "items": {
+        "xpath": "//div[@class='tbox']/div[@class='ssbox']",
+        "startIndex": 0
+      },
+      "count": [
+        {
+          "type": "xpath",
+          "xpath": "//div[contains(@class,'pager')]/a[last()-1]/text()"
+        }
+      ],
+      "name": [
+        {
+          "type": "xpathList",
+          "xpath": "//div[@class='title']/h3/a//text()"
+        }
+      ],
+      "size": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='sbar']/span[3]/b/text()"
+        }
+      ],
+      "magnet": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='sbar']/span[1]/a/@href"
+        }
+      ],
+      "downloadHot": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='sbar']/span[5]/b/text()"
+        }
+      ],
+      "downloadTime": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='sbar']/span[4]/b/text()"
+        }
+      ]
+    }
+  },
+  {
+    "id": "yuhuage",
+    "name": "雨花阁",
+    "desc": "雨花阁 - 简单纯粹的搜索引擎",
+    "proxy": true,
+    "index": "https://www.yuhuage.win",
+    "referer": "",
+    "publish": "https://github.com/yuhuage/dizhi",
+    "path": {
+      "params": [],
+      "default": "/search/${search}-${page}.html"
+    },
+    "parse": {
+      "items": {
+        "xpath": "//div[contains(@class,'search-item')]",
+        "startIndex": 0
+      },
+      "count": [
+        {
+          "type": "xpath",
+          "xpath": "//div[contains(@class,'bottom-pager')]/a[last()]/@href"
+        },
+        {
+          "type": "subBetween",
+          "after": "-",
+          "before": "."
+        }
+      ],
+      "name": [
+        {
+          "type": "xpathList",
+          "xpath": "//div[@class='item-title']//a//text()"
+        }
+      ],
+      "size": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='item-bar']/span[2]/b/text()"
+        }
+      ],
+      "magnet": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='item-title']//a/@href"
+        }
+      ],
+      "downloadHot": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='item-bar']/span[4]/b/text()"
+        }
+      ],
+      "downloadTime": [
+        {
+          "type": "xpath",
+          "xpath": "//div[@class='item-bar']/span[5]/b/text()"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,10 @@
+.idea
+/vendor
+/log
+
+/_build/release
+
+/drawio
+
+oss_key
+mtools-backend.db

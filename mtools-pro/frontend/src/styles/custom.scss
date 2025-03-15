@@ -1,0 +1,17 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  line-height: 48px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+
+  .tips {
+    color: #989898;
+    font-size: 12px;
+    font-weight: normal;
+  }
+}

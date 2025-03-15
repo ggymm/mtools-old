@@ -1,0 +1,17 @@
+html body {
+  .n-base-selection {
+    --n-bezier: none;
+  }
+
+  .n-base-select-menu {
+    --n-bezier: none;
+  }
+
+  .n-tree {
+    .n-tree-node {
+      height: 28px;
+      --n-line-height: 28px;
+      --n-node-content-height: 28px;
+    }
+  }
+}

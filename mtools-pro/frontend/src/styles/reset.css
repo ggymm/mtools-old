@@ -1,0 +1,39 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "JetBrains Mono", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", arial, sans-serif, system-ui;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+input,
+textarea {
+    outline: none;
+    border: none;
+    resize: none;
+}

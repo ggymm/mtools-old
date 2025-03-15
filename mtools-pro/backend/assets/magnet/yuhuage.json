@@ -1,0 +1,60 @@
+{
+  "id": "yuhuage",
+  "name": "雨花阁",
+  "desc": "雨花阁 - 简单纯粹的搜索引擎",
+  "proxy": true,
+  "index": "https://www.yuhuage.win",
+  "referer": "",
+  "publish": "https://github.com/yuhuage/dizhi",
+  "path": {
+    "params": [],
+    "default": "/search/${search}-${page}.html"
+  },
+  "parse": {
+    "items": {
+      "xpath": "//div[contains(@class,'search-item')]",
+      "startIndex": 0
+    },
+    "count": [
+      {
+        "type": "xpath",
+        "xpath": "//div[contains(@class,'bottom-pager')]/a[last()]/@href"
+      },
+      {
+        "type": "subBetween",
+        "after": "-",
+        "before": "."
+      }
+    ],
+    "name": [
+      {
+        "type": "xpathList",
+        "xpath": "//div[@class='item-title']//a//text()"
+      }
+    ],
+    "size": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='item-bar']/span[2]/b/text()"
+      }
+    ],
+    "magnet": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='item-title']//a/@href"
+      }
+    ],
+    "downloadHot": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='item-bar']/span[4]/b/text()"
+      }
+    ],
+    "downloadTime": [
+      {
+        "type": "xpath",
+        "xpath": "//div[@class='item-bar']/span[5]/b/text()"
+      }
+    ]
+  }
+}
